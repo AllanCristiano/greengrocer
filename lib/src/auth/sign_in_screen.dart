@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greengrocer/src/components/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -7,17 +8,30 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green,
-      body:  Column(
+      body: Column(
         children: [
-          Expanded(child:  Container(color: Colors.green,)),
-          Expanded(child: Container(
-           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(45)
-            )
+          Expanded(child: Container(color: Colors.green)),
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(45)),
+              ),
+              child: Column(
+                children: [
+                  CustomTextField(
+                    icon: Icons.email,
+                    label: 'Email',
+                  ),
+                  CustomTextField(
+                    icon: Icons.lock,
+                    label: 'Senha',
+                    obscure: true,
+                  ),
+                ],
+              ),
             ),
-            )
           ),
         ],
       ),
